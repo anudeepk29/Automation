@@ -10,7 +10,7 @@ api_token=`curl -X POST \
   "password": "'"$password"'"
 }' | jq -r .refresh_token`
 
-#echo $api_token
+echo $api_token
 
 access_token=`curl -X POST \
   "$identity_service_url/iaas/api/login" \
