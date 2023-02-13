@@ -8,6 +8,8 @@ kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/we
 
 alias k=kubectl
 
-token=`cat kubeout | grep "kubeadm join"
+token=`cat kubeout | grep "kubeadm join"`
 
 echo $token
+
+yum install -y ansible
