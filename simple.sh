@@ -12,4 +12,6 @@ token=`cat kubeout | grep "kubeadm join"`
 
 echo $token
 
-yum install -y ansible
+yum install -y python3
+
+python3 -m pip install --user ansible
