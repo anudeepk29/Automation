@@ -8,7 +8,9 @@ kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/we
 
 alias k=kubectl
 
-token=`cat kubeout | grep "kubeadm join"`
+token1=`cat kubeout | grep "kubeadm join"`
+token2=`cat kubeout | grpe "--discovery-token"`
+token="$token1$token2"
 
 echo $token
 
