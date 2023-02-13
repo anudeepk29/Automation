@@ -16,4 +16,7 @@ echo $token
 
 yum install -y python3
 
-python3 -m pip install --user ansible
+git clone https://github.com/ansible/ansible.git
+cd ./ansible
+make rpm
+rpm -Uvh ./rpm-build/ansible-*.noarch.rpm
