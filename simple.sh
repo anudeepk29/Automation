@@ -14,9 +14,5 @@ token="$token1$token2"
 
 echo $token
 
-yum install -y python3
+yum install -y python3 epel-release ansible
 
-git clone https://github.com/ansible/ansible.git
-cd ./ansible
-make rpm
-rpm -Uvh ./rpm-build/ansible-*.noarch.rpm
