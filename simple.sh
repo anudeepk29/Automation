@@ -15,4 +15,5 @@ token="$token1$token2"
 echo $token
 
 yum install -y python3 epel-release ansible
+yum install -y ansible
 
