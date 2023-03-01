@@ -1,4 +1,4 @@
-variable "ec2_ami" { default = "ami-0c9978668f8d55984" }
+variable "ec2_ami" { default = "ami-006dcf34c09e50022" }
 variable "server_tag" {	default = "k8s"}
 variable "ec2_key" {default = "kp3"} 
 variable "ec2_count" {default = "1"}
