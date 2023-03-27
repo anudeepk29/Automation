@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{ .Release.Name }}-nginx-app
+  name: {{ .Release.Name }}-nginx-app
+  namespace: default
+  resourceVersion: "2020"
+spec:
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31874
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: {{ .Release.Name }}-nginx-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
