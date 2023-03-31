@@ -1,0 +1,24 @@
+---
+- hosts: docker
+  become: yes
+  remote_user: ec2-user
+  become_user: root
+  tasks:
+  - name: Make sure to remove previous docker installations
+    yum:
+      state: absent
+      name: docker,docker-client,docker-client-latest,docker-common,docker-latest,docker-latest-logrotate,docker-logrotate,docker-engine,podman,runc
+  - name: installing yum-utils
+    yum: 
+      name: yum-utils
+      state: present
+#  - name: adding docker repo
+#    ansible.builtin.yum_repository:
+#      name: docker-ce
+#      description: docker yum repo
+#      baseurl: https://download.docker.com/linux/rhel/docker-ce.repo
+  - name: Install Docker
+    yum: 
+      state: present
+      name: docker
+    
